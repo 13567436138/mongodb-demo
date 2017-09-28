@@ -12,6 +12,6 @@ import com.mark.demo.security.entity.Menu;
 */
 public interface MenuService extends GenericService<Menu>{
 	List<Menu> getMenuTopLever();
-	List<Menu> getMenuChildren(int pid);
+	List<Menu> getMenuChildren(String pid);
 	boolean updateMenu(Menu menu);
 }	

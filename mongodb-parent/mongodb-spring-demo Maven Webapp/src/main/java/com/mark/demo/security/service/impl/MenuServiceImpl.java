@@ -34,15 +34,15 @@ public class MenuServiceImpl extends GenericServiceImpl<Menu> implements MenuSer
 	@Override
 	public List<Menu> getMenuTopLever() {
 		Query query=new Query();
-		Criteria criteria = Criteria.where("parent").is(-1);  
+		Criteria criteria = Criteria.where("parentId").is("-1");  
 		query.addCriteria(criteria);
 		return  menuDao.queryList(query);
 	}
 
 	@Override
-	public List<Menu> getMenuChildren(int pid) {
+	public List<Menu> getMenuChildren(String pid) {
 		Query query=new Query();
-		Criteria criteria = Criteria.where("parent").is(pid);  
+		Criteria criteria = Criteria.where("parentId").is(pid);  
 		query.addCriteria(criteria);
 		return  menuDao.queryList(query);
 	}

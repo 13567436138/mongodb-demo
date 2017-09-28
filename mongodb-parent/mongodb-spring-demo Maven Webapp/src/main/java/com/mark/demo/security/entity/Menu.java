@@ -11,7 +11,6 @@ import com.mark.demo.security.base.GenericEntity;
 */
 @Document(collection = "menu") 
 public class Menu extends GenericEntity{
-	private Menu parent;
 	private String menuName;
 	private String menuDesc;
 	private String link;
@@ -59,12 +58,6 @@ public class Menu extends GenericEntity{
 		this.link = link;
 	}
 
-	public Menu getParent() {
-		return parent;
-	}
-
-	public void setParent(Menu parent) {
-		this.parent = parent;
-	}
+	
 
 }

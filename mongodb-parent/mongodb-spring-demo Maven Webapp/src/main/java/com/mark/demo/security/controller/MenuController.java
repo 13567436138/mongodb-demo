@@ -3,6 +3,7 @@ package com.mark.demo.security.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ public class MenuController {
 	
 	@RequestMapping("/getMenuChildren")
 	@ResponseBody
-	public List<Menu> getMenuChildren(int pid){
+	public List<Menu> getMenuChildren(String pid){
 		return  menuService.getMenuChildren(pid);
 	}
 	
@@ -48,7 +49,8 @@ public class MenuController {
 	}
 	
 	@RequestMapping("/list")
-	public String list(){
+	public String list(HttpServletResponse response){
+		response.setHeader("X-Frame-Options", "sameorigin");
 		return "admins/system/menu.ftl";
 	}
 	
@@ -63,6 +65,7 @@ public class MenuController {
 		if(criteria!=null){
 			query.addCriteria(criteria);
 		}
+		
 		return menuService.findPage(pagination, query);
 	}
 }

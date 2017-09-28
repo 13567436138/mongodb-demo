@@ -32,7 +32,7 @@ public abstract class GenericController
     /**
      * 验证Bean实例对象
      */
-    @Autowired
+   
     protected Validator validator;
     
     /**

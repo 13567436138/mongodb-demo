@@ -24,6 +24,6 @@
     <mongo:mapping-converter base-package="com.mark.demo.security.entity" />  
   
     <!-- mongodb bean的仓库目录，会自动扫描扩展了MongoRepository接口的接口进行注入 -->  
-    <mongo:repositories base-package="com.mark.demo.security.dao.impl" />  
+    <!-- <mongo:repositories base-package="com.mark.demo.security.dao.impl" />   -->
   
 </beans>  
